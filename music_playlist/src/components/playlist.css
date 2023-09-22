@@ -1,0 +1,61 @@
+
+  .gana {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .gana button {
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    cursor: pointer;
+    text-align: justify;
+    position: relative; 
+  }
+  
+  .gana button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(52, 152, 219, 0.8); 
+    filter: blur(8px); 
+    z-index: -1;
+  }
+  
+  
+  
+  
+  .gana img,
+  .gana h3,
+  .gana p,
+  .gana audio {
+    flex: 1; 
+    margin-right: 10px; 
+  }
+  
+  .ganaimg{
+    width:100px;
+    border-radius: 25px;
+  }
+
+  .gana audio {
+    flex: 2; /* Give more space to the audio element if needed */
+  }
+  
+  
+  .gana h3 {
+    font-size: 22px;
+    margin: 5px;
+  }
+  
+  .gana p {
+    font-size: 15px;
+    margin: 5px;
+  }  

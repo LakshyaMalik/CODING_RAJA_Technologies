@@ -1,0 +1,61 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.playing,
+.playlist {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.playing {
+  margin-right: 20px;
+  background-color: #061017;
+  animation: glow 1s infinite alternate;
+  box-shadow: 0 0 10px rgba(238, 240, 243, 0.8);
+  overflow:auto;
+}
+
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px rgba(2, 2, 2, 0.8); 
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(27, 160, 255, 0.8), 0 0 30px rgba(6, 16, 23, 0.6), 0 0 40px rgba(6, 16, 23, 0.4);
+    }
+  }
+  
+  
+  
+
+.playlist {
+  margin-left: 20px;
+  overflow-y: auto;
+  height: 85vh;
+}
+
+.rtal{
+  text-align: left;
+  margin-left: 10px;
+
+}
+
+
+@media (max-width: 800px) {
+  .flex {
+    flex-direction: column; /* Stack items vertically on small screens */
+  }
+
+  .playlist{
+    margin-top: 30px;
+  }
+}
+
