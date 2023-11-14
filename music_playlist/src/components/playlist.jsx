@@ -1,5 +1,6 @@
 import React from 'react';
 import songs from './songs';
+import { FaPlay } from "react-icons/fa";
 import './playlist.css';
 
 const Playlist = ({ onPlay }) => {
@@ -10,6 +11,7 @@ const Playlist = ({ onPlay }) => {
         <audio className="songaudio" src={gana.song} preload="metadata" />
         <h3 className="songtitle">{gana.title}</h3> <br />
         <p className="songalbum">{gana.album}</p>
+        <FaPlay />
       </button>
     </div>
   ));

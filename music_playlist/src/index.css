@@ -83,9 +83,32 @@ button:focus-visible {
   .desc p{
     font-size: 15px;
     font-style: italic;
-    color: #0f0054;
 }
 .desc h2{
     color: #0f0054;
 }
+
+.playing{
+  background-color: #23698b;
+  animation: glowL 1s infinite alternate;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.playing h2{
+  color: whitesmoke;
+}
+
+.playing p{
+  color: whitesmoke;
+}
+
+@keyframes glowL {
+  0% {
+    box-shadow: 0 0 40px rgba(106, 0, 125, 0.867)
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(217, 0, 255, 0.8), 0 0 30px rgb(215, 0, 253) 0 40px rgb(0, 0, 0)
+  }
+}
+
 }
