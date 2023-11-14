@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build My resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container" id="fill_Det">
+        <h1 class="my-3 text-center">
+            Build My Resume
+        </h1>
+        <p class="text-center">By Lakshya Malik</p>
+    
+        <div class="row">
+    
+            <div class="col-md-6">
+                <h3>Personal Info</h3>
+
+                <div class="form-group mt-2 mb-2">
+                    <label for="photoField">Upload Your Profile Photo</label>
+                    <input class="form-control" type="file" id="photoField" />
+                </div>
+                <div class="form-group">
+                    <label for="nameField">Full Name</label>
+                    <input class="textarea form-control" type="text" id="nameField" placeholder="Eg. Steve Minecraft" />
+                </div>
+                <div class="form-group">
+                    <label for="langField">Languages You Know</label>
+                    <input class="textarea form-control" type="text" id="langField" placeholder="Eg. English Hindi Punjabi" />
+                </div>
+                <div class="form-group">
+                    <label for="addressField">Enter Your Residence</label>
+                    <textarea id="addressField" class="textarea form-control" rows="6">
+Flat/House No : 
+Society/Apartment No : 
+District : 
+City : 
+State : 
+Country :                 </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="socialField">Enter Your Social Links</label>
+                    <input class=" form-control textarea" type="text" id="LinkedIn" placeholder="LinkedIn" />
+                    <input class="textarea  form-control" type="text" id="Git" placeholder="GitHub" />
+                    <input class="textarea  form-control" type="text" id="devpost" placeholder="Devpost" />
+                </div>
+                <div class="form-group">
+                    <label for="contactField">Enter Your Contact Info</label>
+                    <input class= "form-control textarea" type="text" id="contactField" placeholder="Phone No." />
+                    <input class=" form-control textarea" type="text" id="mailField" placeholder="Email Id" />
+                </div>
+
+                <div class="form-group mt-2" id="skl">
+                    <label for="Skills">Skills</label>
+                    <textarea id="skillsField" placeholder="List your skills..." class="form-control textarea skills" rows="1"></textarea>
+                
+                    <div class="contbtn text-center mt-3"  id="skillsAddBtn">
+                        <button class="btn addbtn" onclick="addSkillsFIELD()">Add</button>
+                        <button id="remove_skills" class="btn removebtn" onclick="removeSkills()" title="Remove Skills Record">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+    
+            <div class="col-md-6">
+                <h3>Professional Info</h3>
+    
+                <div class="form-group mt-2">
+                    <label for="Objective">Objective</label>
+                    <textarea id="objField" placeholder="What are your goals in life?..." class="form-control textarea" ></textarea>
+                </div>
+    
+                <div class="form-group mt-2" id="we">
+                    <label for="WorkExperience">Work Experience</label>
+                    <textarea id="weField" placeholder="Tell us about your roles in your current/previous organization..." class="form-control textarea work" rows="5" ></textarea>
+    
+                    <div class="contbtn text-center mt-3" id="weAddBtn">
+                        <button onclick="addwFIELD()" class="btn addbtn">Add</button>
+                        <button id="remove_work" class="btn removebtn" onclick="removework()" title="Remove Work Record">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+    
+                <div class="form-group mt-2" id="ed">
+                    <label for="Academics">Academics</label>
+                    <textarea id="edField" placeholder="Tell about your academic profile..." class="form-control textarea acad" rows="3"></textarea>
+    
+                    <div class="contbtn text-center mt-3"  id="edAddBtn">
+                        <button class="btn addbtn" onclick="addFIELD()">Add</button>
+                        <button id="remove_acad" class="btn removebtn" onclick="remove()" title="Remove Academic Record">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+    
+                <div class="form-group mt-2" id="project">
+                    <label for="Projects">Projects</label>
+                    <textarea id="projectField" placeholder="Tell about your Project..." class="form-control textarea project" rows="3"></textarea>
+    
+                    <div class="contbtn text-center mt-3"  id="projectAddBtn">
+                        <button class="btn addbtn" onclick="addpFIELD()">Add</button>
+                        <button id="remove_proj" class="btn removebtn" onclick="removeproj()" title="Remove project Record">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group mt-2" id="certifications">
+                    <label for="Certifications">Certifications</label>
+                    <textarea id="certificationsField" placeholder="List your certifications..." class="form-control textarea certificate" rows="3"></textarea>
+                
+                    <div class="contbtn text-center mt-3"  id="certificationsAddBtn">
+                        <button class="btn addbtn" onclick="addCertificationsFIELD()">Add</button>
+                        <button id="remove_certs" class="btn removebtn" onclick="removeCertifications()" title="Remove Certifications Record">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div class="submit text-center mt-4">
+            <button onclick="generateResume()" class="btn genbtn">Start Generating</button>
+        </div>
+        
+    </div>
+    
+    <div class="Resume m-5" id="resome">
+        <div class="row">
+            <div class="col-md-4 side_col pb-4">
+
+                <div class="flex mt-5">
+                    <img id="photo" class="p_img img-fluid" src="https://wallpapers.com/images/featured-full/minecraft-steve-ddmaz5uwtulpk3cv.jpg" alt="Profile Image" />
+                </div>
+
+
+                <section>
+                    <div class="text-center">
+
+                        <a href=""><p id="linkedinRes">linkedin</p></a>
+                        <a href=""><p id="gitRes">github</p></a>
+                        <a href=""><p id="devpostRes">devpost</p></a>
+                        
+                        
+                    </div>
+                    
+                    <div class="flex">
+                        <p id="addressRes"> Spruce Village </p>
+                    </div>
+                </section>
+
+
+                <section class="card mt-4">
+                    <div class="card-header side_card">
+                        <h2>Skills</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul id="skillRes">
+
+                        </ul>
+                    </div>
+
+                </section>
+
+                <section class="card mt-4">
+                    <div class="card-header side_card">
+                        <h2>Certifications</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <ul id="certRes">
+
+                        </ul>
+                    </div>
+
+                </section>
+
+                <section class="card mt-4">
+                    <div class="card-header side_card">
+                        <h2>Languages</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <p id="langRes"></p>
+                    </div>
+
+                </section>
+
+            </div>
+            <div class="col-md-8">
+                <h1 id="nameRes" class="flex">STEVE Minecraft</h1>
+    
+                <div class="flex mt-5">
+                    <p id="contactRes">123456789</p>
+    
+                    <p id="mailRes">steve@gmail.com</p>
+                </div>
+
+                <section class="card mt-4">
+                    <div class="card-header">
+                        <h2>Objective</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <p id="objRes"></p>
+                    </div>
+
+                </section>
+
+                <section  class="card mt-4">
+                    <div class="card-header">
+                        <h2>Work Experience</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <ul id="weRes"></ul>
+                    </div>
+                
+                </section>
+                
+                <section class="card mt-4">
+                    <div class="card-header">
+                        <h2>Projects</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <ul id="projectRes"></ul>
+                    </div>
+
+                </section>
+
+                <section class="card mt-4">
+                    <div class="card-header">
+                        <h2>Academics</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <ul id="edRes"></ul>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button onclick="print()" class="btn btn-primary">Print Resume Created</button>
+        </div>
+
+
+    </div>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
